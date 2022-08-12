@@ -1,6 +1,6 @@
 #!/bin/bash
 batstatus=$(cat /tmp/battery.txt | head -2 | tail -1)
-batstatusprev=$(cat /tmp/batteryprev.txt2> /dev/null | head -2 | tail -1)
+batstatusprev=$(cat /tmp/batteryprev.txt 2> /dev/null | head -2 | tail -1)
 gwmac=$(cat /etc/default/tektelic-bridge.toml | head -48 | tail -1)
 batnotif=$"$gwmac  $batstatus"
 if [[ "$batstatus" != "$batstatusprev" ]]
